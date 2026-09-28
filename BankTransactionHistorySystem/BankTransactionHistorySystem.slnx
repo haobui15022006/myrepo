@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="BankTransactionHistorySystem.vcxproj" Id="071e1008-1147-4822-9d7e-f63ac81fd446" />
+</Solution>

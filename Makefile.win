@@ -1,0 +1,46 @@
+# Project: BankTransactionHistorySystem
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Account.o Customer.o CustomerManager.o main.o Transaction.o TransactionHistory.o AccountFileHelper.o
+LINKOBJ  = Account.o Customer.o CustomerManager.o main.o Transaction.o TransactionHistory.o AccountFileHelper.o
+LIBS     = -L"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib32" -L"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib32" -L"D:/Dev-Cpp/SFML-3.0.2/lib" -static-libgcc -m32 -g3
+INCS     = -I"D:/Dev-Cpp/TDM-GCC-64/include" -I"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"D:/Dev-Cpp/TDM-GCC-64/include" -I"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/TDM-GCC-64/include" -I"D:/Dev-Cpp/SFML-3.0.2/include"
+BIN      = BankTransactionHistorySystem.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3 -g3
+CFLAGS   = $(INCS) -m32 -g3 -g3
+DEL      = D:\Dev-Cpp\DevCpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Account.o: Account.cpp
+	$(CPP) -c Account.cpp -o Account.o $(CXXFLAGS)
+
+Customer.o: Customer.cpp
+	$(CPP) -c Customer.cpp -o Customer.o $(CXXFLAGS)
+
+CustomerManager.o: CustomerManager.cpp
+	$(CPP) -c CustomerManager.cpp -o CustomerManager.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Transaction.o: Transaction.cpp
+	$(CPP) -c Transaction.cpp -o Transaction.o $(CXXFLAGS)
+
+TransactionHistory.o: TransactionHistory.cpp
+	$(CPP) -c TransactionHistory.cpp -o TransactionHistory.o $(CXXFLAGS)
+
+AccountFileHelper.o: AccountFileHelper.cpp
+	$(CPP) -c AccountFileHelper.cpp -o AccountFileHelper.o $(CXXFLAGS)
